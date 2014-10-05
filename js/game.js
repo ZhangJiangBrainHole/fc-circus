@@ -26,7 +26,36 @@ var draw = {
 };
 
 var music = {
+    startBGM: function (levelCount) {
+        var wait = 0;
 
+        switch (levelCount) {
+            case 0:
+                //play BGM-L0a3.mp3/midi
+                break;
+            case 1:
+                //play BGM-L1a2.mp3/midi
+                break;
+            case 2:
+                //play BGM-L1a2.mp3/midi
+                break;
+            case 3:
+                //play BGM-L0a3.mp3/midi
+                break;
+            case 4:
+                //play BGM-L4.mp3/midi
+                break;
+        }
+
+    },
+    startDeathMusic: function () {
+        var wait = 0;
+
+        //TODO How can I return a value to tell who use this function that DeathMusic is already done?
+        //return a value to tell function game to restart this level
+        //play DeathMusic.mp3/midi
+        //return "musicFinish";
+    }
 };
 
 var control = {
