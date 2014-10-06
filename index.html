@@ -23,6 +23,31 @@
             }
         }
 
+		function changeBGM(cnt) {
+            var varBGM = document.getElementById("BGM");
+            varBGM.pause();
+            switch (cnt) {
+                case 1:
+                    varBGM.innerHTML =
+                            '<source src = "resource/sounds/BGM-L0a3.mp3" type = "audio/mpeg">' +
+                            ' ' +
+                            '<source src = "resource/sounds/BGM-L0a3.mav" type = "audio/wav">';
+                    break;
+                case 2:
+                    varBGM.innerHTML =
+                            '<source src = "resource/sounds/BGM-L1a2.mp3" type = "audio/mpeg">' +
+                            ' ' +
+                            '<source src = "resource/sounds/BGM-L1a2.wav" type = "audio/wav">';
+                    break;
+                case 3:
+                    varBGM.innerHTML =
+                            '<source src = "resource/sounds/BGM-L5.mp3" type = "audio/mpeg">' +
+                            ' ' +
+                            '<source src = "resource/sounds/BGM-L5.wav" type = "audio/wav">';
+                    break;
+            }
+            varBGM.load();
+        }
     </script>
 
 </head>
@@ -31,9 +56,14 @@
   <script src="js/game.js"></script>
   <p>Hello!</p>
 
-  <audio loop="loop" autoplay="autoplay" id = "BGM">
+  <audio loop = "loop" autoplay = "autoplay" id = "BGM">
       <source src = "resource/sounds/BGM-L0a3.mp3" type = "audio/mpeg">
       <source src = "resource/sounds/BGM-L0a3.mav" type = "audio/wav">
+  </audio>
+
+  <audio preload = "preload" id = "deathMusic">
+      <source src = "resource/sounds/deathMusic.mp3" type = "audio/mpeg">
+      <source src = "resource/sounds/deathMusic.wav" type = "audio/wav">
   </audio>
 
   <p>
@@ -41,6 +71,10 @@
   </p>
 
   <button type = "button" id = "buttonBGM" value = "Stop BGM!" onclick = "clickBGM(this)">Stop BGM!</button>
+  
+  <button type = "button" value = "BGM1" onclick = "changeBGM(1)">BGM1</button>
+  <button type = "button" value = "BGM2" onclick = "changeBGM(2)">BGM2</button>
+  <button type = "button" value = "BGM3" onclick = "changeBGM(3)">BGM3</button>
 
 </body>
 </html>
