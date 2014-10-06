@@ -2,11 +2,45 @@
 <html>
 <head lang="en">
   <meta charset="UTF-8">
-  <title></title>
+  <title>fc-circus</title>
+
+    <script>
+        var clickFlag = 0;
+
+        function clickBGM(me) {
+
+            if (clickFlag == 0) {
+                clickFlag = 1;
+                document.getElementById("BGM").pause();
+                me.innerHTML = "Start BGM!";
+                me.value = "Start BGM!";
+            }
+            else {
+                clickFlag = 0;
+                document.getElementById("BGM").play();
+                me.innerHTML = "Stop BGM!";
+                me.value = "Stop BGM!";
+            }
+        }
+
+    </script>
+
 </head>
 <body>
   <canvas></canvas>
   <script src="js/game.js"></script>
   <p>Hello!</p>
+
+  <audio loop="loop" autoplay="autoplay" id = "BGM">
+      <source src = "resource/sounds/BGM-L0a3.mp3" type = "audio/mpeg">
+      <source src = "resource/sounds/BGM-L0a3.mav" type = "audio/wav">
+  </audio>
+
+  <p>
+      Test Music Stop.
+  </p>
+
+  <button type = "button" id = "buttonBGM" value = "Stop BGM!" onclick = "clickBGM(this)">Stop BGM!</button>
+
 </body>
 </html>
